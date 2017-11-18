@@ -70,11 +70,9 @@
           登录
         </button>
         <!--
-          //登录判断
-          登录 和 欢迎+退出 只能出现一个
           Mark Otto -> 数据库
-         -->
-          <p class="navbar-text ">欢迎 <a href="#" class="navbar-link ">Mark Otto</a></p>
+        -->
+          <p class="navbar-text ">欢迎 <a href="#" class="navbar-link ">$ Mark Otto</a></p>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="sign-out">
             退出
           </button>
@@ -162,11 +160,11 @@
 
     // log-in & sign-out 不能同时好使 需要判断状态
     if (true) {
+      $("sign-out").click(function(){
+        alert("您还没有登录！"); 
       //退出后出现 #myModal
       $("#myModal").modal(toggle);
-      //sign-out 不好使
-      $("sign-out").click(function(){
-        alert("您还没有登录！");        
+      //sign-out 不好使    
       })
     }
     else{
