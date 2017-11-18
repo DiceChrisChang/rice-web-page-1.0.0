@@ -27,8 +27,7 @@ class Practice extends CI_Controller {
 		             array('name' =>'Bob','account'=>'0905','age'=>'30' ),
 		             array('name' =>'Cashy','account'=>'0906','age'=>'28' ),
 		);
-
-	    return $dataArray;
+		$list = $data['$dataArray'];
 
 	}
 	public function loadArray()
