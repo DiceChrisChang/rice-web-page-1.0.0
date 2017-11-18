@@ -19,14 +19,13 @@
 <head>
   <!--
       navbar-default
-
   -->
-	<nav class="navbar  navbar-static-top navbar-inverse">
+	<nav class="navbar navbar-fixed-top navbar-inverse ">
   		<div class="container-fluid">
       <!-- 头导航栏 -->
     <div class="navbar-header">
     	<!-- navbar-brand : 
-    	CSS
+    	  CSS
     		float : left
         // 产品名字
     	-->
@@ -40,14 +39,7 @@
               </a>
           </div>
           //无法水平对齐
-          
-    <div class="navbar-header">
-      <button type="button" class="btn btn-default" >
-            <span class="glyphicon glyphicon-magnet" aria-label="Left Align" aria-hidden="true"></span>
-      </button>
-    </div>
- 
-		-->
+      -->
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -59,25 +51,6 @@
         <li class="col-md-4"><a href="#">仓储</a></li>
         <li class="col-md-4"><a href="#">订单</a></li>
         <li class="col-md-4"><a href="#">统计</a></li>
-        <!--
-        <li><a href="#">仓储</a></li>
-        <li><a href="#">订单</a></li>
-        <li><a href="#">统计</a></li>
-
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
-        -->
       </ul>
       <!--
       <form class="navbar-form navbar-left">
@@ -91,66 +64,20 @@
         <!--
         button 弹出状态栏 js
         登录 button 的位置需要修改 
-        
-        <button type="button" class="btn btn-default navbar-btn ">登录</button>
-
         -->
-        
-        <!-- 按钮触发模态框 -->
+        <!-- 按钮触发模态框  -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
           登录
         </button>
-             <!-- 模态框（Modal） -->
-             <div class="modal " id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-             <div class="modal-dialog">
-                     <div class="modal-content">
-                       <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <!--
-                           <button data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span>
-   
-
-
-
-
-                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        -->
-
-
-                          <span class="sr-only">Close</span></button>
-                         <h4 class="modal-title">提问</h4>
-                       </div>
-                       <div class="modal-body">
-                         <p>问题描述</p>
-                         <textarea class="form-control"></textarea>
-                       </div>
-                       <div class="modal-footer">
-                         <button data-dismiss="modal" class="btn btn-default" type="button">关闭</button>
-                         <button class="btn btn-primary" type="button">提交</button>
-                       </div>
-                     </div> <!-- /.modal-content -->
-                   </div> <!-- /.modal-dialog -->
-             </div>
-
-            <div style="height:200px"></div>
-        
-
-
-        
-
-
-
-        
-
-
-
-
         <!--
           //登录判断
-          登录 和 欢迎 只能出现一个
+          登录 和 欢迎+退出 只能出现一个
           Mark Otto -> 数据库
-        -->
-        <p class="navbar-text ">欢迎 <a href="#" class="navbar-link ">Mark Otto</a></p>
+         -->
+          <p class="navbar-text ">欢迎 <a href="#" class="navbar-link ">Mark Otto</a></p>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="sign-out">
+            退出
+          </button>
         <!--
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
@@ -164,11 +91,56 @@
         </li>
         -->
       </ul>
-    </div><!-- /.navbar-collapse -->
+   </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 	</nav>
-</head>
+ </head>
+
+    <!-- 
+    模态框（Modal）
+    模态框不能放进 nav-bar
+     -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title" id="myModalLabel">  Welcome  </h4>
+            </div>
+            <div class="modal-body"> 
+               <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-2 control-label">账号</label>
+                  <div class="col-sm-8">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="数字">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-2 control-label">密码</label>
+                  <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="字母数字组合">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+               </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="submit" class="btn btn-primary">登录</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
   
+
   <!--jQuery 引入-->
   <script src="https://cdn.bootcss.com/jquery/3.2.1/core.js"></script>
   <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
@@ -177,16 +149,36 @@
 	<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript">
 
-    //$('#myModal').modal('show');
-    //$('#myModal').modal('hide');
-    //$('#myModal').modal('toggle');
+    /*
+    $(function() {
+      $('#myModal').modal('hide')
+    });
 
-  $(function() {
-    $('#myModal').modal({
-        keyboard: true
-    })
-  });
+    $(function() {
+        $('#myModal').on('hide.bs.modal')
+    });
+    */
 
+
+    // log-in & sign-out 不能同时好使 需要判断状态
+    if (true) {
+      //退出后出现 #myModal
+      $("#myModal").modal(toggle);
+      //sign-out 不好使
+      $("sign-out").click(function(){
+        alert("您还没有登录！");        
+      })
+    }
+    else{
+      $('#identifier').modal('hide');
+      alert("您已登陆！");
+      $("#sign-out").click(function(){
+        alert("您即将退出！即将切换登录");
+        // 确定--需要转到首页(尚未登录)！
+      });
+    }
+
+    
   </script>
 </body>
 </html>
